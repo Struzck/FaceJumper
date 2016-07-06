@@ -1,0 +1,68 @@
+<?php
+	session_start();
+
+	require_once("gestionBD.php");
+
+	if(isset($_SESSION["loginForm"])){
+		$loginForm["loginAccount"]=$_REQUEST["loginAccount"];
+		$loginForm["loginPassword"]=$_REQUEST["loginPassword"];
+
+		$_SESSION["loginForm"]=$loginForm;
+
+	}else{
+	 	Header("Location:index.php");
+	}
+
+
+	$errors=checkLogin($loginForm);
+
+	if (count ($errors)>0){
+		$_SESSION["login"]="";
+		$_SESSION["errors"]=$errors;
+		Header("Location:index.php");
+
+	}else{
+		$_SESSION["login"]="true";
+		Header("Location:ExitoLogin.php");
+	}
+
+	function checkLogin ($loginForm){
+		require_once("gestionBD.php");
+
+		if(empty($loginForm["loginAccount"])){
+			$errors[]="Account name can't be empty.";
+		}
+		if(empty($loginForm["loginPassword"])){
+			$errors[]="Password can't be empty.";
+		}
+
+		$connection = createConnectionDB();
+
+		$account = $loginForm["loginAccount"];
+		$password = $loginForm["loginPassword"];
+		$queryAccount = mysql_query("SELECT user_account FROM USERS WHERE user_account ='" . $account . "'");
+		$queryPassword = mysql_query("SELECT user_password FROM USERS WHERE user_password='".$password."'");
+
+		$checkAccount = mysql_fetch_assoc($queryAccount);
+		$userAccount = $checkAccount["user_account"];
+		$checkPassword = mysql_fetch_assoc($queryPassword);
+		$userPassword = $checkPassword["user_password"];
+
+		if(strcmp($userAccount, $account) == 0){
+			if(strcmp($userPassword, $password) !== 0){
+				$errors[]="Wrong password.";
+			}
+		}else{
+			$errors[]="Wrong Account.";
+		}
+
+		closeConnectionBD($connection);
+		return $errors;
+	}
+
+        echo '<pre>';
+        var_dump($_SESSION);
+        echo '</pre>';
+   
+
+?>
