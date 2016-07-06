@@ -1,7 +1,7 @@
 # FaceJumper
 
 Web browser run and jump game based on google's T-Rex. Users will be able to upload their face pictures and play with their own face.
-There is also a Leaderboard system for Max score, total deaths and total jumps; its able to check their ten first players without logging in and check the whole leaderboard once the user has been logued in.
+There is also a Leaderboard system for Max score, total deaths and total jumps; its able to check their ten first players without logging in and check the whole leaderboard once the user has been logged in.
 
 
 ## Mockups
@@ -10,7 +10,7 @@ There is also a Leaderboard system for Max score, total deaths and total jumps; 
 
 ![alt tag](https://raw.githubusercontent.com/Struzck/FaceJumper/master/Images/game.png)
 
-### Non loggued in leaderboards
+### Non logged in leaderboards
 
 ![alt tag](https://raw.githubusercontent.com/Struzck/FaceJumper/master/Images/leaderboards.png)
 
