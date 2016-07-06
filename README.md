@@ -8,7 +8,7 @@ There is also a Leaderboard system for Max score, total deaths and total jumps; 
 
 ### Index
 
-![alt tag](https://raw.githubusercontent.com/Struzck/FaceJumper/master/Images/game.png)
+![alt tag](https://raw.githubusercontent.com/Struzck/FaceJumper/master/Images/index.png)
 
 ### Non logged in leaderboards
 
