@@ -3,8 +3,8 @@
 	function createConnectionDB()
 	{
 		$host="localhost";
-		$user="root";
-		$password="raspberry";
+		$user="XXXXX";
+		$password="XXXXX";
 		$connection=null;
 
 		$connection =  mysql_connect($host, $user, $password);
