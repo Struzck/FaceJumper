@@ -19,11 +19,11 @@
 	if (count ($errors)>0){
 		$_SESSION["login"]="";
 		$_SESSION["errors"]=$errors;
-		Header("Location:index.php");
+		#Header("Location:error.php");  
 
 	}else{
 		$_SESSION["login"]="true";
-		Header("Location:ExitoLogin.php");
+		Header("Location:loged.php");
 	}
 
 	function checkLogin ($loginForm){
@@ -40,16 +40,20 @@
 
 		$account = $loginForm["loginAccount"];
 		$password = $loginForm["loginPassword"];
-		$queryAccount = mysql_query("SELECT user_account FROM USERS WHERE user_account ='" . $account . "'");
-		$queryPassword = mysql_query("SELECT user_password FROM USERS WHERE user_password='".$password."'");
+		$md5Password = md5($password);
+		$accountQuery = mysql_query("SELECT user_account FROM USERS WHERE user_account ='" . $account . "'");
+		$passwordQuery = mysql_query("SELECT user_password FROM USERS WHERE user_password='" . $md5Password . "'");
 
-		$checkAccount = mysql_fetch_assoc($queryAccount);
+		$checkAccount = mysql_fetch_assoc($accountQuery);
 		$userAccount = $checkAccount["user_account"];
-		$checkPassword = mysql_fetch_assoc($queryPassword);
+		$checkPassword = mysql_fetch_assoc($passwordQuery);
 		$userPassword = $checkPassword["user_password"];
 
 		if(strcmp($userAccount, $account) == 0){
-			if(strcmp($userPassword, $password) !== 0){
+			echo $md5Password;
+			echo " aaa ";
+			echo $userPassword;
+			if(strcmp($userPassword, $md5Password) !== 0){
 				$errors[]="Wrong password.";
 			}
 		}else{

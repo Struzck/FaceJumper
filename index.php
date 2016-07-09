@@ -18,6 +18,16 @@
 
             $_SESSION["loginForm"]=$loginForm;
 
+            $user["userID"]=0;
+            $user["userAcc"]="";
+            $user["userPass"]="";
+            $user["userPic"]="";
+            $user["userScore"]=0;
+            $user["userDeaths"]=0;
+            $user["userJumps"]=0;
+
+            $_SESSION["user"]=$user;
+
     }else{
 
         Header("Location:index.php");
@@ -91,7 +101,7 @@
                         </div>
                         <div class="form-group">
                             <label for="loginPassword">Password:</label>
-                            <input type="loginPassword" name="loginPassword" class="password form-control" id="loginPassword">
+                            <input type="password" name="loginPassword" class="password form-control" id="loginPassword">
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
@@ -100,19 +110,19 @@
         
             <div class="col-sm-4" id="registerBox" style="background-color: green; margin-bottom: 35px;">
                 <div id="register">
-                    <form role="form">
+                    <form role="form" action="registerManagement.php" method="post">
                         <div class="form-group">
                             <h1> REGISTER </h1>
-                            <label for="loginAccount">Account Name:</label>
-                            <input type="text" name="loginAccount" class="form-control" id="loginAccount">
+                            <label for="registerAccount">Account Name:</label>
+                            <input type="text" name="registerAccount" class="form-control" id="registerAccount">
                         </div>
                         <div class="form-group">
-                            <label for="loginPassword">Password:</label>
-                            <input type="loginPassword" class="form-control" id="loginPassword">
+                            <label for="registerPassword">Password:</label>
+                            <input type="password" name="registerPassword" class="form-control" id="registerPassword">
                         </div>
                          <div class="form-group">
-                            <label for="loginPassword">Confirm password:</label>
-                            <input type="loginPassword" class="form-control" id="loginPassword">
+                            <label for="confirmPassword">Confirm password:</label>
+                            <input type="password" class="form-control" id="confirmPassword"> <!-- confirmarla con JS -->
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
