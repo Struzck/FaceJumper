@@ -8,7 +8,7 @@
 		$connection=null;
 
 		$connection =  mysql_connect($host, $user, $password);
-		$BD = mysql_select_db('facejumper', $connection);
+		$BD = mysql_select_db('XXXXX', $connection);
 
 		if (!$connection) {
     		die('Error connecting to BD: ' . mysql_error());
