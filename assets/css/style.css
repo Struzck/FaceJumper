@@ -8,6 +8,10 @@ linear-gradient(#eee .1em, transparent .1em);
 background-size: 100% 1.2em;
 }
 
+p {
+	margin-left: 100px !important;
+}
+
 #backgroundImage {
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -22,9 +26,66 @@ background-size: 100% 1.2em;
 }
 
 #loginBox {
-	margin-left: 90px;
+	margin-left: 20px;
 }
 
 #registerText {
 	margin-top: 20px;
+}
+
+#instructions {
+	margin-top: 100px;
+	margin-left: 80px !important;
+}
+
+#data {
+	margin-top: 50px;
+}
+
+#profile {
+	margin-top: 70px !important;
+}
+
+#profile-image{
+	margin-left: 60px !important;
+	padding: 0px;
+	width: 150px; 
+  	height: 180px; 
+}
+
+#profile-User-image {
+	background: url('/assets/media/profilePics/example.png');
+	border-radius: 85px;
+}
+
+#profile-User-image-edit:hover:before {
+    background: url('/assets/media/profilePics/edit.png');
+    opacity: 0.5;
+  	content: '';
+  	display: inline-block;
+  	width: 150px; 
+  	height: 150px; 
+  	position: absolute;
+  	top: 0;
+  	right: 0;
+  	border-radius: 80px;
+}
+
+.top-buffer { 
+	margin-top: 60px; 
+}
+
+.h2Profile {
+	line-height: 150% !important;
+}
+
+.image-upload > input
+{
+    display: none !important;
+}
+
+.image-upload img
+{
+    width: 80px;
+    cursor: pointer;
 }
