@@ -5,7 +5,7 @@
 
 	$connection = createConnectionDB();
 
-    if (!isset($_SESSION["account"])) {
+    if (!isset($_SESSION["user"])) {
 
             $registerForm["account"]="";
             $registerForm["password"]="";
@@ -27,10 +27,6 @@
             $user["userJumps"]=0;
 
             $_SESSION["user"]=$user;
-
-    }else{
-
-        Header("Location:index.php");
     }
 
     if(isset($_SESSION["errors"])){
@@ -88,58 +84,67 @@
 			<a href="#register"> <img id="parallaxButton" class="center-block" src="assets/media/icons/button_icon.png" height="32" width="35"></a>
     	</div>
 	</div>
+    <?php if((isset($_SESSION["login"]))){?>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4" id="loginBox" style="background-color: yellow;">
-                <div id="login">
-                    <form role="form" action="loginManagement.php" method="post">
-                        <div class="form-group">
-                            <h1> LOG IN </h1>
-                            <label for="loginAccount">Account name:</label>
-                            <input type="text" name="loginAccount" class="account form-control" id="loginAccount">
-                        </div>
-                        <div class="form-group">
-                            <label for="loginPassword">Password:</label>
-                            <input type="password" name="loginPassword" class="password form-control" id="loginPassword">
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                </div> 
-            </div> 	
         
-            <div class="col-sm-4" id="registerBox" style="background-color: green; margin-bottom: 35px;">
-                <div id="register">
-                    <form role="form" action="registerManagement.php" method="post">
-                        <div class="form-group">
-                            <h1> REGISTER </h1>
-                            <label for="registerAccount">Account Name:</label>
-                            <input type="text" name="registerAccount" class="form-control" id="registerAccount">
-                        </div>
-                        <div class="form-group">
-                            <label for="registerPassword">Password:</label>
-                            <input type="password" name="registerPassword" class="form-control" id="registerPassword">
-                        </div>
-                         <div class="form-group">
-                            <label for="confirmPassword">Confirm password:</label>
-                            <input type="password" class="form-control" id="confirmPassword"> <!-- confirmarla con JS -->
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                </div> 
-            </div>  
-        </div>
-    </div>
 
-    <div id="registerText">
-        <p class="text-center">
-            FaceJumper is an innovative web browser game in wich you can upload your own photo to become a part of the game. <br>
-            Register to access the game and advanced features such as join the rankings and upload the character's face picture. <br>
-            Based on T-Rex Google's game, FaceJumper provides a fun filled unique experience you will enjoy. <br>
-            <img src="assets/media/img/gifweb3.gif">
-        </p>
-    </div>
-	
+    <?php }else{ ?>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4" id="loginBox" style="background-color: yellow;">
+                    <div id="login">
+                        <form role="form" action="loginManagement.php" method="post">
+                            <div class="form-group">
+                                <h1> LOG IN </h1>
+                                <label for="loginAccount">Account name:</label>
+                                <input type="text" name="loginAccount" class="account form-control" id="loginAccount">
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password:</label>
+                                <input type="password" name="loginPassword" class="password form-control" id="loginPassword">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    </div> 
+                </div>  
+        
+                <div class="col-sm-4" id="registerBox" style="background-color: green; margin-bottom: 35px;">
+                    <div id="register">
+                        <form role="form" action="registerManagement.php" method="post">
+                            <div class="form-group">
+                                <h1> REGISTER </h1>
+                                <label for="registerAccount">Account Name:</label>
+                                <input type="text" name="registerAccount" class="form-control" id="registerAccount">
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPassword">Password:</label>
+                                <input type="password" name="registerPassword" class="form-control" id="registerPassword">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm password:</label>
+                                <input type="password" class="form-control" id="confirmPassword"> <!-- confirmarla con JS -->
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    </div> 
+                </div>  
+            </div>
+        </div>
+
+        <div id="registerText">
+            <p class="text-center">
+                FaceJumper is an innovative web browser game in wich you can upload your own photo to become a part of the game. <br>
+                Register to access the game and advanced features such as join the rankings and upload the character's face picture. <br>
+                Based on T-Rex Google's game, FaceJumper provides a fun filled unique experience you will enjoy. <br>
+                <img src="assets/media/img/gifweb3.gif">
+            </p>
+        </div>
+    
+	<?php } ?>
+
+
+
     <?php
         echo '<pre>';
         var_dump($_SESSION);

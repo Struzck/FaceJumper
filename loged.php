@@ -13,6 +13,8 @@
 		$userData = mysql_fetch_assoc($userQuery);
 
 		$_SESSION["user"]["userID"] = $userData["user_id"];
+		$_SESSION["user"]["userAcc"] = $userData["user_account"];
+		$_SESSION["user"]["userPass"] = $userData["user_password"];
 		$_SESSION["user"]["userPic"] = $userData["user_picture"];
         $_SESSION["user"]["userScore"] = $userData["user_record"];
         $_SESSION["user"]["userDeaths"] = $userData["user_deaths"];
@@ -70,6 +72,7 @@
 		</div>
 	</div>
 
+
 	<div class="row" id="instructions">
 		<div class="col-sm-6">
 			<h2> Instructions </h2>
@@ -79,9 +82,9 @@
 	<div class="row top-buffer">
 		<div class="col-sm-6">
 	 		<p> To play FaceJumper you just have to go to your profile and press Play! or click Play on navigation bar.
-	 		Before playing, you must upload a picture of your face on your profile, where you will find a picture editor to
+	 		Before playing, you must upload a picture of your face at your profile, where you will find a picture editor to
 	 		adjust your face to the model.
-	 		Once you are in the game, the goal is get as far as you can dodging the appearing obstacles with space bar.</p>
+	 		Once you are in the game, the goal is get as far as you can dodging the appearing obstacles with the space bar.</p>
 		</div>
 	</div>
 

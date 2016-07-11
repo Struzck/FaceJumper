@@ -19,7 +19,7 @@
 	if (count ($errors)>0){
 		$_SESSION["login"]="";
 		$_SESSION["errors"]=$errors;
-		#Header("Location:error.php");  
+		Header("Location:error.php");  
 
 	}else{
 		$_SESSION["login"]="true";
@@ -50,9 +50,6 @@
 		$userPassword = $checkPassword["user_password"];
 
 		if(strcmp($userAccount, $account) == 0){
-			echo $md5Password;
-			echo " aaa ";
-			echo $userPassword;
 			if(strcmp($userPassword, $md5Password) !== 0){
 				$errors[]="Wrong password.";
 			}

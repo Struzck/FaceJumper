@@ -13,10 +13,11 @@
           <li><a href="#">Total jumps</a></li> 
         </ul>
         </li>
+        <li><?php if(isset($_SESSION["login"])){ ?><a href="game.php"><?php echo "Play"; ?></a><?php }else{ }?></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="index.php#register"><span class="glyphicon glyphicon-user"></span> Log in</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+      <li><?php if(isset($_SESSION["login"])){ ?><a href="profile.php"><?php echo "Profile"; ?></a><?php }else{ ?><a href="index.php#register">Log in</a><?php } ?></li>
+      <li><?php if(isset($_SESSION["login"])){ ?><a href="logOut.php"><?php echo " Log Out"; ?></a></a><?php }else{ ?><a href="index.php#register">Register</a><?php } ?></li>
     </ul>
   </div>
 </nav>
