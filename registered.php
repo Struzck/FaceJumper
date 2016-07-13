@@ -7,6 +7,7 @@
 		$registerForm=$_SESSION["registerForm"];
 		unset($_SESSION["registerForm"]);
 		unset($_SESSION["errors"]);
+		unset($_SESSION["user"]);
 	}else{
 		Header("Location:registro.php");
 

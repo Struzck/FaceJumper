@@ -8,10 +8,11 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Leaderboards
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Score</a></li>
-          <li><a href="#">Total deaths</a></li>
-          <li><a href="#">Total jumps</a></li> 
+          <li><a href="scoreLeaderboard.php">Score</a></li>
+          <li><a href="deathsLeaderboard.php">Total deaths</a></li>
+          <li><a href="jumpsLeaderboard.php">Total jumps</a></li> 
         </ul>
+        <li><a href="toDo.php">TODO</a></li> 
         </li>
         <li><?php if(isset($_SESSION["login"])){ ?><a href="game.php"><?php echo "Play"; ?></a><?php }else{ }?></li>
     </ul>

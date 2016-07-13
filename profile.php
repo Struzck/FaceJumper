@@ -57,6 +57,7 @@
                         </div>
                         <input type="submit" value="Update" name="submit">
                     </form>
+                    Rank: xxxx
                 </div>                  
                     
 
@@ -75,7 +76,7 @@
 
     <div class="container">
             <div class="row">
-                <div id="play">
+                <div id="play" class="text-center top-buffer">
                     <form action="game.php">
                         <input type="submit" value="Play!">
                     </form>
@@ -99,7 +100,7 @@
 </html>
 
 <?php
-    /*echo '<pre>';
+    echo '<pre>';
     var_dump($_SESSION);
-    echo '</pre>';*/
+    echo '</pre>';
 ?> 
