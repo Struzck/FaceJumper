@@ -1,5 +1,6 @@
 
 
+
 DROP TABLE IF EXISTS USERS;
 
 
@@ -62,9 +63,6 @@ DELIMITER //
             user_deaths = w_user_deaths, 
             user_jumps = w_user_jumps, 
             user_picture = w_user_picture WHERE user_id = w_user_id;
-            CALL sort_SCORELEADERBOARD(); 
-            CALL sort_DEATHSLEADERBOARD(); 
-            CALL sort_JUMPSLEADERBOARD(); 
         END//
 DELIMITER ;	
     
