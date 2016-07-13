@@ -1,6 +1,3 @@
-mysql -u root -p #raspberry
-
-use facejumper
 
 
 DROP TABLE IF EXISTS USERS;
