@@ -7,31 +7,40 @@
 
     if (!isset($_SESSION["user"])) {
 
-            $registerForm["account"]="";
-            $registerForm["password"]="";
-            $registerForm["picture"]="";
+            $registerForm["account"] = "";
+            $registerForm["password"] = "";
+            $registerForm["picture"] = "";
 
-            $_SESSION["registerForm"]=$registerForm;
+            $_SESSION["registerForm"] = $registerForm;
 
-            $loginForm["account"]="";
-            $loginForm["password"]="";
+            $loginForm["account"] = "";
+            $loginForm["password"] = "";
 
-            $_SESSION["loginForm"]=$loginForm;
+            $_SESSION["loginForm"] = $loginForm;
 
-            $user["userID"]=0;
-            $user["userAcc"]="";
-            $user["userPass"]="";
-            $user["userPic"]="";
-            $user["userScore"]=0;
-            $user["userDeaths"]=0;
-            $user["userJumps"]=0;
+            $user["userID"] = 0;
+            $user["userAcc"] = "";
+            $user["userPass"] = "";
+            $user["userPic"] = "";
+            $user["userScore"] = 0;
+            $user["userDeaths"] = 0;
+            $user["userJumps"] = 0;
+            $user["rank"] = 0;
 
-            $_SESSION["user"]=$user;
+            $_SESSION["user"] = $user;
     }
 
-    if(isset($_SESSION["errors"])){
-        $errors=$_SESSION["errors"];
+    if(isset($_SESSION["errors"])) {
+        $errors = $_SESSION["errors"];
     }
+
+     if (!isset($_SESSION["pagination"])) {
+            $pagination["score"] = 1;
+            $pagination["deaths"] = 1;
+            $pagination["jumps"] = 1;
+
+            $_SESSION["pagination"] = $pagination;
+     }   
 
 ?> 
 
@@ -84,7 +93,7 @@
 			<a href="#register"> <img id="parallaxButton" class="center-block" src="assets/media/icons/button_icon.png" height="32" width="35"></a>
     	</div>
 	</div>
-    <?php if((isset($_SESSION["login"]))){?>
+    <?php if(isset($_SESSION["login"])){?>
 
         
 
@@ -123,7 +132,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="confirmPassword">Confirm password:</label>
-                                <input type="password" class="form-control" id="confirmPassword"> <!-- confirmarla con JS -->
+                                <input type="password" class="form-control" id="confirmPassword"> 
                             </div>
                             <button type="submit" class="btn btn-default">Submit</button>
                         </form>

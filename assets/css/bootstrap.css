@@ -3530,7 +3530,7 @@ tbody.collapse.in {
   z-index: 1000;
   display: none;
   float: left;
-  min-width: 160px;
+  min-width: 134px !important;
   padding: 5px 0;
   margin: 2px 0 0;
   font-size: 14px;
@@ -5464,6 +5464,7 @@ button.list-group-item-danger.active:focus {
 .panel-body {
   padding: 15px;
 }
+
 .panel-heading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;

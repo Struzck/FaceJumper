@@ -46,7 +46,7 @@ p {
 	margin-top: 70px !important;
 }
 
-#profile-image{
+#profile-image {
 	margin-left: 60px !important;
 	padding: 0px;
 	width: 150px; 
@@ -75,17 +75,46 @@ p {
 	margin-top: 60px; 
 }
 
+.toDO {
+	width: 1000px;
+	background-color: #f1f1f1;
+	margin-left: 200px;
+	margin-top: 200px;
+	border: 5px solid black;
+	padding: 10px;
+	text-align: left !important;
+}
+
 .h2Profile {
 	line-height: 150% !important;
 }
 
-.image-upload > input
-{
+.image-upload > input {	
     display: none !important;
 }
 
-.image-upload img
-{
+.image-upload img {
     width: 80px;
     cursor: pointer;
+}
+
+.col-centered{
+	float: none;
+	margin: 0 auto;
+}
+
+.leaderboardTable td, .leaderboardTable th {
+	width: 250px;
+	height: 50px;
+	background-color: yellow;
+	text-align: center;
+	border: 5px solid black;	
+}
+
+.leaderboardTable th {
+	font-size: 175%;
+}	
+
+.leaderboardTable td {
+	font-size: 135%;
 }

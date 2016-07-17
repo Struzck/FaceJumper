@@ -57,7 +57,25 @@
                         </div>
                         <input type="submit" value="Update" name="submit">
                     </form>
-                    Rank: xxxx
+
+                    <?php 
+
+                        $dataQuery = mysql_query("SELECT * FROM USERS ORDER BY user_record DESC");
+                        $countQuery = mysql_query("SELECT count(*) as total FROM USERS;");
+                        $rows = mysql_fetch_assoc($countQuery);
+                        $totalRows =  $rows["total"];
+
+                        for($i = 1; $i <= $totalRows; $i++){
+                            $data = mysql_fetch_assoc($dataQuery);
+                            $name = $data["user_account"];
+                            if($name == $_SESSION["user"]["userAcc"]){
+                                $_SESSION["user"]["rank"] =  $i;                           
+                            }
+                        } 
+                            
+                    ?>
+
+                    Rank: <?php echo $_SESSION["user"]["rank"] ?> 
                 </div>                  
                     
 
