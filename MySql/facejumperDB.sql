@@ -1,6 +1,5 @@
 
 
-
 DROP TABLE IF EXISTS USERS;
 
 
@@ -74,15 +73,35 @@ DELIMITER ;
 
 -- USER CREATION --    TRY TO CALL THEM NOT AT THE SAME TIME OR UPDATE WILL BE BUGGED
 
-CALL new_User("Aravinda", "pass123", 0, 0, 0, "picture1.png");
-CALL new_User("Lilian", "pass123", 0, 0, 0, "picture2.png");
-CALL new_User("Ingvar", "pass123", 0, 0, 0, "picture3.png");
-CALL new_User("Yamato", "pass123", 0, 0, 0, "picture4.png");
-CALL new_User("Onesimos", "pass123", 0, 0, 0, "picture5.png");
-CALL new_User("Sergey", "pass123", 0, 0, 0, "picture6.png");
-CALL new_User("Proteus", "pass123", 0, 0, 0, "picture7.png");
-CALL new_User("Hilarion", "pass123", 0, 0, 0, "picture8.png");
-CALL new_User("Goffredo", "pass123", 0, 0, 0, "picture9.png");
+CALL new_User("Player 1", "pass123", 0, 0, 0, "picture1.png");
+CALL new_User("Player 2", "pass123", 0, 0, 0, "picture2.png");
+CALL new_User("Player 3", "pass123", 0, 0, 0, "picture3.png");
+CALL new_User("Player 4", "pass123", 0, 0, 0, "picture4.png");
+CALL new_User("Player 5", "pass123", 0, 0, 0, "picture5.png");
+CALL new_User("Player 6", "pass123", 0, 0, 0, "picture6.png");
+CALL new_User("Player 7", "pass123", 0, 0, 0, "picture7.png");
+CALL new_User("Player 8", "pass123", 0, 0, 0, "picture8.png");
+CALL new_User("Player 9", "pass123", 0, 0, 0, "picture9.png");
+CALL new_User("Player 10", "pass123", 0, 0, 0, "picture10.png");
+CALL new_User("Player 11", "pass123", 0, 0, 0, "picture11.png");
+CALL new_User("Player 12", "pass123", 0, 0, 0, "picture12.png");
+CALL new_User("Player 13", "pass123", 0, 0, 0, "picture13.png");
+CALL new_User("Player 14", "pass123", 0, 0, 0, "picture14.png");
+CALL new_User("Player 15", "pass123", 0, 0, 0, "picture15.png");
+CALL new_User("Player 16", "pass123", 0, 0, 0, "picture16.png");
+CALL new_User("Player 17", "pass123", 0, 0, 0, "picture17.png");
+CALL new_User("Player 18", "pass123", 0, 0, 0, "picture18.png");
+CALL new_User("Player 19", "pass123", 0, 0, 0, "picture19.png");
+CALL new_User("Player 20", "pass123", 0, 0, 0, "picture20.png");
+CALL new_User("Player 21", "pass123", 0, 0, 0, "picture21.png");
+CALL new_User("Player 22", "pass123", 0, 0, 0, "picture22.png");
+CALL new_User("Player 23", "pass123", 0, 0, 0, "picture23.png");
+CALL new_User("Player 24", "pass123", 0, 0, 0, "picture24.png");
+CALL new_User("Player 25", "pass123", 0, 0, 0, "picture25.png");
+CALL new_User("Player 26", "pass123", 0, 0, 0, "picture26.png");
+CALL new_User("Player 27", "pass123", 0, 0, 0, "picture27.png");
+CALL new_User("Player 28", "pass123", 0, 0, 0, "picture28.png");
+CALL new_User("Player 29", "pass123", 0, 0, 0, "picture29.png");
 
 
 -- USER UPDATE --
@@ -92,6 +111,31 @@ CALL update_User(2, "newPassword2", 2093, 10, 36, "newPicture2.png");
 CALL update_User(3, "newPassword3", 3871, 13, 87, "newPicture3.png");
 CALL update_User(4, "newPassword4", 983, 4, 38, "newPicture4.png");
 CALL update_User(5, "newPassword5", 1205, 2, 31, "newPicture5.png");
+CALL update_User(6, "newPassword6", 4231, 38, 38, "newPicture6.png");
+CALL update_User(7, "newPassword7", 5676, 128, 122, "newPicture7.png");
+CALL update_User(8, "newPassword8", 2123, 12, 452, "newPicture8.png");
+CALL update_User(9, "newPassword9", 123, 434, 983, "newPicture9.png");
+CALL update_User(10, "newPassword10", 9854, 43, 238, "newPicture10.png");
+CALL update_User(11, "newPassword11", 346, 32, 239, "newPicture11.png");
+CALL update_User(12, "newPassword12", 212, 46, 17, "newPicture12.png");
+CALL update_User(13, "newPassword13", 212, 64, 38, "newPicture13.png");
+CALL update_User(14, "newPassword14", 757, 19, 69, "newPicture14.png");
+CALL update_User(15, "newPassword15", 897, 87, 91, "newPicture15.png");
+CALL update_User(16, "newPassword16", 4545, 343, 40, "newPicture16.png");
+CALL update_User(17, "newPassword17", 9524, 94, 65, "newPicture17.png");
+CALL update_User(18, "newPassword18", 1452, 10, 57, "newPicture18.png");
+CALL update_User(19, "newPassword19", 6523, 47, 27, "newPicture19.png");
+CALL update_User(20, "newPassword20", 3345, 87, 394, "newPicture20.png");
+CALL update_User(21, "newPassword21", 1111, 14, 48, "newPicture21.png");
+CALL update_User(22, "newPassword22", 8654, 24, 9, "newPicture22.png");
+CALL update_User(23, "newPassword23", 78, 498, 271, "newPicture23.png");
+CALL update_User(24, "newPassword24", 2345, 47, 34, "newPicture24.png");
+CALL update_User(25, "newPassword25", 7234, 9, 74, "newPicture25.png");
+CALL update_User(26, "newPassword26", 7653, 47, 74, "newPicture26.png");
+CALL update_User(27, "newPassword27", 4543, 17, 87, "newPicture27.png");
+CALL update_User(28, "newPassword28", 4572, 39, 53, "newPicture28.png");
+CALL update_User(29, "newPassword29", 4532, 16, 50, "newPicture29.png");
+
 
 -- USER DELETE --
 
