@@ -51,7 +51,7 @@
     	<?php 
     		$registerAccount = $registerForm["registerAccount"];
 			$registerPassword = $registerForm["registerPassword"];
-			$encryptedPassword = md5($registerPassword);
+			$encryptedPassword = password_hash($registerPassword, PASSWORD_BCRYPT);
     		$newUser = newUser($registerAccount, $encryptedPassword);
     	?>
     	<h2>Successfully registered. Press <a href="index.php">here</a> to log in.</h2>

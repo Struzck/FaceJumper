@@ -38,9 +38,35 @@
 			echo nl2br("- Hacer otro update procedure para que al cambiar la imagen de perfil no se actualicen las LEADERBOARDS. "."\n");
 			echo nl2br("x Las LEADERBOARDS no se ordenan en la web, pero si en la DB.       [CORREGIDO] "."\n");
 			echo nl2br("- Cambiar el ancho de la columna RANK en las LEADERBOARDS, ponerlo mas pequeno. "."\n");
+			echo nl2br("- Cambiar Account por userName en la web. "."\n");
+			echo nl2br("- Controlar a que sitios se puede acceder sin haber pasado por otros antes. "."\n");
+			echo nl2br("- Hacer que haya que pasar por el index antes de las LEADERBOARDS. "."\n");
+			echo nl2br("x El ranking no cambia con la paginacion. Hacer que no sobren filas.       [CORREGIDO] "."\n");
+			echo nl2br("- Hacer todas las comprobaciones de los formularios con JS. "."\n");
+			echo nl2br("x Cambiar la encriptacion de las contrasenas por una propia (no md5). Usar HASH.       [CORREGIDO] "."\n");
 			echo nl2br(" "."\n");
 		?>
 	</div>	
+
+
+	<div class="text-center top-buffer top-buffer">
+		<h2> PRUEBAS </h2>
+		<div class="top-buffer">
+
+			<h4></h4>
+			<?php 
+				
+				
+
+	
+
+			?>	
+
+		</div>	
+		<div class="top-buffer"></div>
+	</div>
+
+
 
 </boddy>
 

@@ -19,7 +19,7 @@
 	if (count ($errors)>0){
 		$_SESSION["login"]="";
 		$_SESSION["errors"]=$errors;
-		Header("Location:error.php");  
+		#Header("Location:error.php");  
 
 	}else{
 		$_SESSION["login"]="true";
@@ -40,9 +40,8 @@
 
 		$account = $loginForm["loginAccount"];
 		$password = $loginForm["loginPassword"];
-		$md5Password = md5($password);
 		$accountQuery = mysql_query("SELECT user_account FROM USERS WHERE user_account ='" . $account . "'");
-		$passwordQuery = mysql_query("SELECT user_password FROM USERS WHERE user_password='" . $md5Password . "'");
+		$passwordQuery = mysql_query("SELECT user_password FROM USERS WHERE user_account ='" . $account . "'");
 
 		$checkAccount = mysql_fetch_assoc($accountQuery);
 		$userAccount = $checkAccount["user_account"];
@@ -50,7 +49,7 @@
 		$userPassword = $checkPassword["user_password"];
 
 		if(strcmp($userAccount, $account) == 0){
-			if(strcmp($userPassword, $md5Password) !== 0){
+			if(!password_verify($password, $userPassword)){
 				$errors[]="Wrong password.";
 			}
 		}else{
