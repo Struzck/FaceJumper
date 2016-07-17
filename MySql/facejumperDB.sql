@@ -6,12 +6,11 @@ DROP TABLE IF EXISTS USERS;
 CREATE TABLE USERS (
 user_id int NOT NULL AUTO_INCREMENT,
 user_account varchar(10) NOT NULL,
-user_password varchar(32) NOT NULL,
+user_password varchar(60) NOT NULL,
 user_record int NOT NULL DEFAULT 0,
 user_deaths int NOT NULL DEFAULT 0,
 user_jumps int NOT NULL DEFAULT 0,
 user_picture varchar(50),
-modifiedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY (user_id)
 )ENGINE=InnoDB;
 
@@ -24,7 +23,7 @@ DROP PROCEDURE IF EXISTS update_User;
 DELIMITER //
     CREATE PROCEDURE new_User (
     	IN w_user_account varchar(10), 
-    	IN w_user_password varchar(32),  
+    	IN w_user_password varchar(60),  
     	IN w_user_record int, 
     	IN w_user_deaths int, 
     	IN w_user_jumps int,
@@ -50,7 +49,7 @@ DELIMITER ;
 DELIMITER //  
     CREATE PROCEDURE update_User ( 
         IN w_user_id int,
-        IN w_user_password varchar(32), 
+        IN w_user_password varchar(60), 
         IN w_user_record int,
         IN w_user_deaths int,
         IN w_user_jumps int,
