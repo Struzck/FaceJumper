@@ -20,7 +20,7 @@
         $_SESSION["user"]["userDeaths"] = $userData["user_deaths"];
         $_SESSION["user"]["userJumps"] = $userData["user_jumps"];
 		
-		$_SESSION["changedPassword"]=0;
+		$_SESSION["modifiedPassword"]=0;
 
 		unset($_SESSION["loginForm"]);
 		unset($_SESSION["registerForm"]);	

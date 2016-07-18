@@ -34,8 +34,22 @@
     }
 
 
-    function updatePassword($account, $oldPassword, $newPassword){
-
+    function updatePassword($account, $newPassword){
+      try{
+        $connection = createConnectionDB();
+        $userID = $_SESSION["user"]["userID"];
+        $score = $_SESSION["user"]["userScore"];
+        $deaths = $_SESSION["user"]["userDeaths"];
+        $jumps = $_SESSION["user"]["userJumps"];
+        $picture = $_SESSION["user"]["userPic"];
+        
+        $query = "CALL update_User('" . $userID . "', '" . $newPassword . "', '" . $score . "', '" . $deaths . "', '" . $jumps . "', '" . $picture . "')";
+        $update = mysql_query($query);
+      }catch(exception $e) {
+        $_SESSION["error"] =  "ex: ".$e; 
+        Header("Location:error.php");
+      }
+      return $update;      
     }
 
     function updateData($account, $score, $deaths, $jumps){

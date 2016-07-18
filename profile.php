@@ -27,6 +27,8 @@
 	<!-- JAVASCRIPT -->
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
  	<script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+
 
 
 </head>
@@ -82,16 +84,28 @@
                 <div class="col-sm-8" id="loginBox" style="background-color: grey;">
                     <div id="data"> 
                         <h2 class="h2Profile"> Account Name: <?php echo $_SESSION["user"]["userAcc"]    ?></h2>
-                        <h2 class="h2Profile"> Account password: <?php echo $_SESSION["user"]["userPass"]   ?></h2>
-                        <h2 class="h2Profile"> User Picture: <?php echo $_SESSION["user"]["userPic"]    ?></h2>
+                        <h2 class="h2Profile"> Account password: *********</h2> 
                         <h2 class="h2Profile"> Score record: <?php echo $_SESSION["user"]["userScore"]  ?></h2>
                         <h2 class="h2Profile"> Total deaths: <?php echo $_SESSION["user"]["userDeaths"] ?></h2>
                         <h2 class="h2Profile"> Total jumps: <?php echo $_SESSION["user"]["userJumps"]   ?></h2>
+                    </div>                   
+                </div>
+                <div class="col-sm-4" id="modifyPasswordButton">
+                    <input id="passShow" type="button" value="modify" onclick="passwordPanel();" />
+                
+                    <div id="modifyPass" style="margin-top: 10px;">
+                        <form role="form" action="modifyPassword.php" method="post">
+                                <input type="password" placeholder="New password" name="changePass" class="form-control">
+                                <br>
+                                <input type="password" placeholder="Repeat password" name="verifyPass" class="form-control"> 
+                                <br>
+                                <button type="submit">Change password </button>                       
+                        </form>   
                     </div>
                 </div>
             </div>  
     </div>         
-
+    <?php $_SESSION["modifiedPassword"] = 0; ?>
     <div class="container">
             <div class="row">
                 <div id="play" class="text-center top-buffer">
@@ -102,6 +116,8 @@
             </div>
     </div>
 
+
+    
 
 
 
